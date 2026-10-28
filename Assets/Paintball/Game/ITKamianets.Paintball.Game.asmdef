@@ -1,0 +1,27 @@
+{
+    "name": "ITKamianets.Paintball.Game",
+    "rootNamespace": "ITKamianets.Paintball.Game",
+    "references": [
+        "ITKamianets.Paintball.Core",
+        "ITKamianets.Paintball.Weapons",
+        "ITKamianets.Paintball.Maps",
+        "ITKamianets.Paintball.Hud",
+        "ITKamianets.Paintball.Menus",
+        "ITKamianets.Engine.Core",
+        "ITKamianets.Engine.Input",
+        "ITKamianets.Engine.Character",
+        "ITKamianets.Engine.CharacterView.Camera",
+        "ITKamianets.Engine.CharacterView.Controls",
+        "Unity.InputSystem",
+        "UnityEngine.UI"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

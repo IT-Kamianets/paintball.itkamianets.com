@@ -1,0 +1,19 @@
+{
+    "name": "ITKamianets.Paintball.Hud",
+    "rootNamespace": "ITKamianets.Paintball.Hud",
+    "references": [
+        "ITKamianets.Paintball.Core",
+        "ITKamianets.Paintball.Ui",
+        "ITKamianets.Engine.Core",
+        "UnityEngine.UI"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

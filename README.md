@@ -1,23 +1,43 @@
-# Character View starter
+# KP Paintball Arena
 
-Start a **Character View** game on the [IT Kamianets 3D Engine](https://3d.itkamianets.com): 1st + 3rd person, games like GTA V, Cyberpunk 2077, Elden Ring.
+Командний 3D-шутер на [IT Kamianets 3D Engine](https://3d.itkamianets.com). Події відбуваються на вигаданій пейнтбольній арені в Кам’янці-Подільському. Гравець стає за червоних або синіх і грає 3 на 3 проти ботів. Онлайн-мультиплеєра в цій версії немає.
 
-The camera and controls for this style are ready.
+Мета: влучати в суперників і допомогти команді першою набрати 10 очок. Одне влучання фарбою вибуває бійця; за кілька секунд він відроджується на боці своєї команди.
 
-## Start
+## Як грати
 
-1. Clone this repository under your game's name.
-2. Open it in Unity Hub with Unity 6000.6: it is an empty Universal 3D project.
-3. Follow [AGENTS.md](AGENTS.md): add the engine packages, build the game. Hand it to your AI agent, or follow it yourself.
+1. Відкрий проєкт у Unity **6000.6** і дочекайся, поки підтягнуться пакети з git.
+2. Відкрий `Assets/Scenes/Main.unity` і натисни Play.
+3. Обери команду.
+4. WASD або лівий стік — рух, миша або правий стік — огляд, ЛКМ або правий тригер — постріл. Shift — біг, Ctrl — присід, пробіл — стрибок, V — перша або третя особа, Esc — пауза.
 
-Engine packages for this style: `3d-unity-core`, `3d-unity-scene`, `3d-unity-input`, `3d-unity-character`, `3d-unity-assets`, `3d-unity-audio`, `3d-constructor-character-view-camera`, `3d-constructor-character-view-controls`.
+У третій особі утримуй ПКМ, щоб бігти боком і цілитися туди, куди дивиться камера. На арені є укриття, рампа, сходи й низький тунель, у який треба присісти.
 
-Every package, with what it does and how to install it: https://3d.itkamianets.com/packages.md
+Префаб гравця: меню **KP Paintball → Create Player Prefab** зберігає `Assets/Prefabs/Player.prefab`. У самому матчі боєць збирається тим самим кодом під час старту.
 
-## Changing an engine package
+## З чого зібрана гра
 
-The `3d-*` packages are shared by every game. To change one, clone it into `Packages/` (Unity uses that copy instead of the git URL; git ignores it), work on a branch or your fork, and open a pull request to its `master` branch. [AGENTS.md](AGENTS.md) has the steps.
+Рух, камера і ввід — готові модулі рушія, не код гри. Правила пейнтболу лежать лише в `Assets/Paintball/`.
 
-## AI agents
+| Модуль | Навіщо тут |
+|---|---|
+| `3d-unity-core` | Події матчу, лог, сервіси |
+| `3d-unity-input` | Клавіатура, миша, геймпад і пауза. Гра не читає пристрої напряму |
+| `3d-unity-character` | Ходьба, біг, стрибок, присід і схили — і для гравця, і для ботів |
+| `3d-constructor-character-view-camera` | Камера від першої і третьої особи, приціл із центра екрана |
+| `3d-constructor-character-view-controls` | «Уперед» — туди, куди дивиться камера |
+| `3d-unity-scene`, `3d-unity-assets`, `3d-unity-audio` | Підключені як основа рушія. Арена цієї версії збирається в коді; постріл і ляпанець фарби — короткі згенеровані звуки. Кроки через sound bank — наступний крок |
+| AI Navigation | Шляхи ботів між укриттями |
 
-[AGENTS.md](AGENTS.md) is the guide for any AI agent (Codex, Cursor, Copilot and others read it automatically); [CLAUDE.md](CLAUDE.md) points Claude Code to it.
+Пакети гри, кожен зі своїм asmdef:
+
+| Папка | Що всередині |
+|---|---|
+| `paintball-core` | Команди, рахунок, відродження, боти |
+| `paintball-weapons` | Маркер, куля з падінням, плями фарби |
+| `paintball-maps` | Арена: мури, укриття, рампа, сходи, тунель, точки команд |
+| `paintball-hud` | Рахунок, приціл, кулі, вибування |
+| `paintball-menus` | Вибір команди, пауза, результат |
+| `paintball-game` | З’єднує модулі в сцені Main |
+
+Ідентифікатор збірки: `com.itkamianets.paintball`.

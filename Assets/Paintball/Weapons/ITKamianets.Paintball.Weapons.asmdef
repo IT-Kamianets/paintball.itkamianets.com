@@ -1,0 +1,22 @@
+{
+    "name": "ITKamianets.Paintball.Weapons",
+    "rootNamespace": "ITKamianets.Paintball.Weapons",
+    "references": [
+        "ITKamianets.Paintball.Core",
+        "ITKamianets.Engine.Core",
+        "ITKamianets.Engine.Input",
+        "ITKamianets.Engine.Character",
+        "ITKamianets.Engine.CharacterView.Camera",
+        "ITKamianets.Engine.CharacterView.Controls",
+        "Unity.InputSystem"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
