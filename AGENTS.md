@@ -1,10 +1,10 @@
-# Character View starter: agent guide
+# KP Paintball Arena: agent guide
 
-This repository starts a **Character View** game on the **IT Kamianets 3D Engine**: 1st + 3rd person, games like GTA V, Cyberpunk 2077, Elden Ring. A developer clones it under the game's name, and it becomes their game.
+**KP Paintball Arena** is a team paintball shooter on the IT Kamianets 3D Engine. The player picks red or blue and fights 3v3 against bots, first or third person, on one arena in Kamianets-Podilskyi. One paint hit eliminates; the first team to 10 points wins. This version is single-player against bots, with no online multiplayer.
 
-For games where the player directly controls a character from first-person or third-person perspective.
+Game code is under `Assets/Paintball/`: `paintball-core` (match, teams, respawn, bots), `paintball-weapons` (marker and paint), `paintball-maps` (the fortress arena), `paintball-hud`, `paintball-menus`, wired by `paintball-game`. How to play is in [README.md](README.md). Press Play in `Assets/Scenes/Main.unity`: the arena and the player are created from those packages on top of `3d-unity-character`, `3d-unity-input` and the Character View camera and controls.
 
-It holds an empty Unity project (Universal 3D template, Unity **6000.6**): one scene, `Assets/Scenes/Main.unity`, the URP settings, `Packages/manifest.json` and `ProjectSettings/`. Everything else is built from this guide.
+The repository started from the Character View constructor. The guide below is how that starter is set up and how engine packages are changed.
 
 ## Read first
 
@@ -72,6 +72,10 @@ Merge these into `dependencies` in `Packages/manifest.json`. Unity installs each
 - Game packages live in their own repos (cloned into `Packages/`, like the engine ones), so several games can share one; while the game is young, keep them as folders with their own asmdef under `Assets/<Game>/`.
 - Scenes, prefabs that wire packages together, and build settings stay in this project; reusable code goes into packages.
 - Rewrite `README.md` for the game and this file's first paragraph once the game has a name: what it is, its packages, how to play.
+
+## This game
+
+Those starter steps are already done for KP Paintball Arena. Do not replace the match with an empty playground. `Main.unity` keeps the camera, light and volume; `PaintballGame` builds the fortress arena and the fighters when Play starts. The arena has cover, a ramp, steps and a crouch tunnel. The local player is a `CharacterMotor` with `CharacterViewControls`, and the main camera gets `CharacterViewCamera`. **KP Paintball → Create Player Prefab** writes `Assets/Prefabs/Player.prefab`.
 
 ## Rules
 

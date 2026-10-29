@@ -1,0 +1,17 @@
+{
+    "name": "ITKamianets.Paintball.Core",
+    "rootNamespace": "ITKamianets.Paintball.Core",
+    "references": [
+        "ITKamianets.Engine.Core",
+        "ITKamianets.Engine.Character"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
